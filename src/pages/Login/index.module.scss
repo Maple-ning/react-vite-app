@@ -1,0 +1,21 @@
+.loginView {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginContainer{
+  display: flex;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+.leftBackground{
+  width: 300px;
+  background: skyblue;
+}
+
+.rightForm{
+  padding: 80px 50px;
+}

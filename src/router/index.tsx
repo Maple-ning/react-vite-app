@@ -1,33 +1,52 @@
-import React, { Children, lazy } from "react";
-import LayoutView from "@/layout";
-const Dashboard = lazy(() => import("@/pages/Dashboard"));
-const Config = lazy(() => import("@/pages/Config"));
+import { useRoutes, useLocation, useNavigate, Outlet } from "react-router-dom";
+import { Suspense, useEffect } from "react";
 
-import { Navigate } from "react-router-dom";
+import Layout from "@/layout";
+import Login from "@/pages/Login";
+import Home from "@/pages/Home";
+import Config from "@/pages/Config";
+import Error404 from "@/pages/Error404";
 
-const withLoadingComponent = (component: JSX.element) => (
-  <React.Suspense fallback={<div>Loading...</div>}>{component}</React.Suspense>
-);
-
-const routes = [
+const myRouter = [
   {
     path: "/",
-    element: <Navigate to="/dashboard" />,
-  },
-  {
-    path: "/",
-    element: <LayoutView />,
+    element: <Layout />,
     children: [
       {
-        path: "/dashboard",
-        element: withLoadingComponent(<Dashboard />),
+        path:"home",
+        index: true,
+        element: <Home />
       },
       {
-        path: "/config",
-        element: withLoadingComponent(<Config />),
-      },
-    ],
+        path: "board",
+        element: <Config />
+      }
+    ]
   },
-];
+  {
+    path: "/login",
+    element: <Login />
+  },
+  {
+    path: "*",
+    element: <Error404 />
+  }
+]
 
-export default routes;
+
+const Router = () => (
+  <Suspense fallback={<div>loading</div>}>{useRoutes(myRouter)}</Suspense>
+);
+
+const RouterBeforeEach = () => {
+  const location = useLocation();
+  const navigator = useNavigate();
+  const isAuth = localStorage.getItem("react-token");
+  useEffect(() => {
+    if (!isAuth&&location.pathname !== '/login') {
+      navigator('/login')
+    }
+  });
+  return <Outlet />
+};
+export { Router, RouterBeforeEach };

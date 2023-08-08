@@ -1,13 +1,14 @@
-import { useRoutes, Link } from "react-router-dom";
-import router from "@/router"
+// 根组件
+import { StrictMode } from 'react'
+import { Router, RouterBeforeEach } from "@/router";
 
 const App = () => {
-  const outlet = useRoutes(router)
   return (
-    <div className="App">
-      { outlet }
-    </div>
+    <StrictMode>
+      <Router/>
+      <RouterBeforeEach />
+    </StrictMode>
   )
 }
 
-export default App
+export default App;
