@@ -1,52 +1,67 @@
-import { useRoutes, useLocation, useNavigate, Outlet } from "react-router-dom";
-import { Suspense, useEffect } from "react";
+import { Suspense, lazy } from 'react'
+import Loading from '@/components/Loading'
 
-import Layout from "@/layout";
-import Login from "@/pages/Login";
-import Home from "@/pages/Home";
-import Config from "@/pages/Config";
-import Error404 from "@/pages/Error404";
+// 懒加载组件
+const lazyLoad = (Component) => (
+  <Suspense fallback={<Loading />}>
+    <Component />
+  </Suspense>
+)
 
-const myRouter = [
+// 路由组件引入
+const Layout = lazy(() => import('@/layout'));
+const Login = lazy(() => import('@/pages/Login'));
+const Home = lazy(() => import('@/pages/Home'));
+const Error404 = lazy(() => import('@/pages/Error404'));
+
+
+const rootRouter = [
   {
-    path: "/",
-    element: <Layout />,
+    path: '/',
+    name: '首页',
+    key: '/',
+    auth: true,
+    element: lazyLoad(Layout),
     children: [
       {
-        path:"home",
         index: true,
-        element: <Home />
+        name: '首页',
+        key: '/',
+        auth: true,
+        element: lazyLoad(Home),
       },
-      {
-        path: "board",
-        element: <Config />
-      }
-    ]
+    ],
   },
   {
-    path: "/login",
-    element: <Login />
+    index: false,
+    path: 'login',
+    name: '登录',
+    key: '/login',
+    auth: false,
+    element: lazyLoad(Login),
+  },
+  // {
+  //   index: false,
+  //   path: 'dashboard/*',
+  //   name: 'Dashboard',
+  //   key: '/dashboard',
+  //   auth: true,
+  //   element: lazyLoad(Home),
+  // },
+  {
+    index: false,
+    path: '/403',
+    name: '403',
+    key: '/403',
+    auth: false,
+    element: <Home/>,
   },
   {
-    path: "*",
-    element: <Error404 />
-  }
+    path: '*',
+    name: 'No Match',
+    key: '*',
+    element: lazyLoad(Error404),
+  },
 ]
 
-
-const Router = () => (
-  <Suspense fallback={<div>loading</div>}>{useRoutes(myRouter)}</Suspense>
-);
-
-const RouterBeforeEach = () => {
-  const location = useLocation();
-  const navigator = useNavigate();
-  const isAuth = localStorage.getItem("react-token");
-  useEffect(() => {
-    if (!isAuth&&location.pathname !== '/login') {
-      navigator('/login')
-    }
-  });
-  return <Outlet />
-};
-export { Router, RouterBeforeEach };
+export default rootRouter

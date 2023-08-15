@@ -1,13 +1,13 @@
-// 根组件
-import { StrictMode } from 'react'
-import { Router, RouterBeforeEach } from "@/router";
+import { useRoutes } from "react-router-dom";
+import rootRouter from "@/router";
+import AuthRouter from "@/router/authRouter";
 
-const App = () => {
+function App() {
+  const element = useRoutes(rootRouter as any);
   return (
-    <StrictMode>
-      <Router/>
-      <RouterBeforeEach />
-    </StrictMode>
+    <>
+      <AuthRouter>{element}</AuthRouter>
+    </>
   )
 }
 

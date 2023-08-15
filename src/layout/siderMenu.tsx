@@ -7,9 +7,10 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Affix } from 'antd';
+import { useStyle } from "./style";
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -28,8 +29,8 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem('Option 1', '1', <PieChartOutlined />),
-  getItem('Option 2', '2', <DesktopOutlined />),
+  getItem('Dashboard', '/dashboard', <PieChartOutlined />),
+  getItem('Config', '/config', <DesktopOutlined />),
   getItem('User', 'sub1', <UserOutlined />, [
     getItem('Tom', '3'),
     getItem('Bill', '4'),
@@ -39,15 +40,17 @@ const items: MenuItem[] = [
   getItem('Files', '9', <FileOutlined />),
 ];
 
-const asideView = () => {
+const siderMenu = () => {
   const [collapsed, setCollapsed] = useState(false);
-
+  const { styles } = useStyle()
   return (
-    <Sider style={{ height: "100vh" }} collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-      <div className="demo-logo-vertical" />
-      <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
-    </Sider>
+    <Affix className={styles.column}>
+      <Sider width={200} style={{ height: "100vh" }} collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+        <div className="demo-logo-vertical" />
+        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+      </Sider>
+    </Affix>
   )
 }
 
-export default asideView;
+export default siderMenu;
