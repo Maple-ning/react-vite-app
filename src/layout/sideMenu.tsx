@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import {
   DesktopOutlined,
   FileOutlined,
@@ -9,7 +9,8 @@ import {
 import type { MenuProps } from 'antd';
 import { Layout, Menu, Affix } from 'antd';
 import { useStyle } from "./style";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { useLocalStorage } from "@/hooks";
 
 const { Sider } = Layout;
 
@@ -37,16 +38,22 @@ const items: MenuItem[] = [
 
 const sideMenu = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [getLocalSelect, setLocalSelect, clearLocalSelect] = useLocalStorage("selectKey");
+  const [selectKey, setSelectKey] = useState(getLocalSelect() || ["/home"]);
   const { styles } = useStyle();
   const navigate = useNavigate();
-  const handleMenuClick = (e) => {
+  const handleMenuClick = (e: any) => {
     navigate(e.key, { replace: true });
+    setSelectKey([e.key]);
   }
+  useEffect(()=>{
+    setLocalSelect(selectKey);
+  },[setLocalSelect,selectKey])
   return (
     <Affix className={styles.column}>
       <Sider width={200} style={{ height: "100vh" }} collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <div className="demo-logo-vertical" />
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} onClick={handleMenuClick}/>
+        <Menu theme="dark" defaultSelectedKeys={selectKey} mode="inline" items={items} onClick={handleMenuClick} />
       </Sider>
     </Affix>
   )

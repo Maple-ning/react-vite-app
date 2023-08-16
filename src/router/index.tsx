@@ -21,7 +21,7 @@ const rootRouter = [
     path: '/',
     name: '首页',
     key: '/',
-    element: lazyLoad(Layout),
+    element: <Layout/>,
     children: [
       {
         index: true,
@@ -44,21 +44,6 @@ const rootRouter = [
     name: '登录',
     key: '/login',
     element: lazyLoad(Login),
-  },
-  // {
-  //   index: false,
-  //   path: 'dashboard/*',
-  //   name: 'Dashboard',
-  //   key: '/dashboard',
-  //   auth: true,
-  //   element: lazyLoad(Home),
-  // },
-  {
-    index: false,
-    path: '/403',
-    name: '403',
-    key: '/403',
-    element: <Home />,
   },
   {
     path: '*',
