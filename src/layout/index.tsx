@@ -1,6 +1,6 @@
 import { Layout } from 'antd';
 import { Outlet } from "react-router-dom";
-import Aside from "./siderMenu";
+import Aside from "./sideMenu";
 import Header from "./topMenu";
 import Footer from "./Footer";
 const { Content } = Layout;

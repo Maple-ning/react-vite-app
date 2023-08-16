@@ -9,6 +9,7 @@ import {
 import type { MenuProps } from 'antd';
 import { Layout, Menu, Affix } from 'antd';
 import { useStyle } from "./style";
+import { useNavigate } from 'react-router-dom'
 
 const { Sider } = Layout;
 
@@ -29,28 +30,26 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem('Dashboard', '/dashboard', <PieChartOutlined />),
+  getItem('Dashboard', '/home', <PieChartOutlined />),
   getItem('Config', '/config', <DesktopOutlined />),
-  getItem('User', 'sub1', <UserOutlined />, [
-    getItem('Tom', '3'),
-    getItem('Bill', '4'),
-    getItem('Alex', '5'),
-  ]),
-  getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-  getItem('Files', '9', <FileOutlined />),
 ];
 
-const siderMenu = () => {
+
+const sideMenu = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const { styles } = useStyle()
+  const { styles } = useStyle();
+  const navigate = useNavigate();
+  const handleMenuClick = (e) => {
+    navigate(e.key, { replace: true });
+  }
   return (
     <Affix className={styles.column}>
       <Sider width={200} style={{ height: "100vh" }} collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <div className="demo-logo-vertical" />
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} onClick={handleMenuClick}/>
       </Sider>
     </Affix>
   )
 }
 
-export default siderMenu;
+export default sideMenu;

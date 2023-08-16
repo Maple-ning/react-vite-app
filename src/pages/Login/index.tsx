@@ -16,9 +16,8 @@ const Login: React.FC = () => {
   const onFinish = (values: any) => {
     setLocalStorage("learn-token", "test");
     setTimeout(() => {
-      navigate("/test");
+      navigate("/home");
     }, 200);
-    console.log("Success:", values);
   };
 
   const onFinishFailed = (errorInfo: any) => {

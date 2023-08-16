@@ -3,7 +3,6 @@ import { Layout } from 'antd';
 import { useStyle } from "./style";
 import { useNavigate } from "react-router-dom";
 import { Button, Breadcrumb, Affix } from 'antd';
-import cookie from 'react-cookies';
 
 interface LayoutHeaderProps {
   children: JSX.Element | null
@@ -15,7 +14,6 @@ const topMenu: React.FC = ({ children }: LayoutHeaderProps) => {
   const navigate = useNavigate();
   const { styles } = useStyle();
   const logout = () => {
-    cookie.remove('react-token');
     setTimeout(() => {
       navigate('/login')
     }, 200);

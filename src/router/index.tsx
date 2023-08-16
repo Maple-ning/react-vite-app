@@ -12,6 +12,7 @@ const lazyLoad = (Component) => (
 const Layout = lazy(() => import('@/layout'));
 const Login = lazy(() => import('@/pages/Login'));
 const Home = lazy(() => import('@/pages/Home'));
+const Config = lazy(() => import('@/pages/Config'));
 const Error404 = lazy(() => import('@/pages/Error404'));
 
 
@@ -20,15 +21,20 @@ const rootRouter = [
     path: '/',
     name: '首页',
     key: '/',
-    auth: true,
     element: lazyLoad(Layout),
     children: [
       {
         index: true,
-        name: '首页',
-        key: '/',
-        auth: true,
+        name: "首页",
+        key: "home",
+        path:"home",
         element: lazyLoad(Home),
+      },
+      {
+        name: '配置',
+        key: 'config',
+        path: 'config',
+        element: lazyLoad(Config),
       },
     ],
   },
@@ -37,7 +43,6 @@ const rootRouter = [
     path: 'login',
     name: '登录',
     key: '/login',
-    auth: false,
     element: lazyLoad(Login),
   },
   // {
@@ -53,8 +58,7 @@ const rootRouter = [
     path: '/403',
     name: '403',
     key: '/403',
-    auth: false,
-    element: <Home/>,
+    element: <Home />,
   },
   {
     path: '*',
