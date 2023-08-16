@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect,useMemo, useState } from 'react';
 import { Layout } from 'antd';
 import { useStyle } from "./style";
 import { useNavigate } from "react-router-dom";
-import { Button, Breadcrumb, Affix } from 'antd';
+import { Button, Affix } from 'antd';
+import Breadcrumb from "@/components/Breadcrumb";
 
 interface LayoutHeaderProps {
   children: JSX.Element | null
@@ -18,15 +19,12 @@ const topMenu: React.FC = ({ children }: LayoutHeaderProps) => {
       navigate('/login')
     }, 200);
   }
+
   return (
     <Affix>
       <Header className={styles.header}>
-        <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
-        {children}
+        <Breadcrumb/>
+
         <Button type="text" onClick={logout}>退出登录</Button>
       </Header>
     </Affix>

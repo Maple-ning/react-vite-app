@@ -13,6 +13,7 @@ const Layout = lazy(() => import('@/layout'));
 const Login = lazy(() => import('@/pages/Login'));
 const Home = lazy(() => import('@/pages/Home'));
 const Config = lazy(() => import('@/pages/Config'));
+const Permission = lazy(() => import('@/pages/Config/Permission'));
 const Error404 = lazy(() => import('@/pages/Error404'));
 
 
@@ -34,7 +35,7 @@ const rootRouter = [
         name: '配置',
         key: 'config',
         path: 'config',
-        element: lazyLoad(Config),
+        element: lazyLoad(Config)
       },
     ],
   },

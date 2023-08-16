@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   DesktopOutlined,
   FileOutlined,
@@ -46,9 +46,9 @@ const sideMenu = () => {
     navigate(e.key, { replace: true });
     setSelectKey([e.key]);
   }
-  useEffect(()=>{
+  useEffect(() => {
     setLocalSelect(selectKey);
-  },[setLocalSelect,selectKey])
+  }, [setLocalSelect, selectKey])
   return (
     <Affix className={styles.column}>
       <Sider width={200} style={{ height: "100vh" }} collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>

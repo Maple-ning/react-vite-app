@@ -1,6 +1,11 @@
 import routes from '@/router';
 import Error404 from '@/pages/Error404';
 
+/**
+ * @description: 扁平化函数
+ * @param { Array } arr 需要扁平的数组
+ * @return { Array } 扁平化后的数组
+ */
 export const flattenRoutes = (arr) =>
   arr.reduce((prev, item) => {
     if (Array.isArray(item.children)) {
