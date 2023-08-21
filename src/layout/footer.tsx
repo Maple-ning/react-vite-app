@@ -1,10 +1,11 @@
 import { Layout } from 'antd';
+import "@/assets/styles/layout.scss";
 
 const {  Footer } = Layout;
 
 const FooterView = () => {
   return (
-    <Footer style={{ textAlign: 'center' }}>React and typescript Created by Ning</Footer>
+    <Footer className="footer-container">Blogs by Ning</Footer>
   )
 }
 

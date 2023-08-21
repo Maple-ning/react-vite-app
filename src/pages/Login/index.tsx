@@ -26,7 +26,7 @@ const Login: React.FC = () => {
   return (
     <div className="login-background">
       <div className="login-container">
-        <div className="login-top">Sign up</div>
+        <div className="login-top">Login Blogs</div>
         <div className="login-form">
           <Form
             name="basic"
@@ -48,7 +48,7 @@ const Login: React.FC = () => {
             >
               <Input
                 prefix={<UserOutlined className="site-form-item-icon" />}
-                placeholder="用户名"
+                placeholder="Account"
               />
             </Form.Item>
 
@@ -59,7 +59,7 @@ const Login: React.FC = () => {
               <Input.Password
                 prefix={<LockOutlined className="site-form-item-icon" />}
                 type="password"
-                placeholder="密码"
+                placeholder="Password"
               />
             </Form.Item>
 
@@ -68,7 +68,7 @@ const Login: React.FC = () => {
               valuePropName="checked"
               wrapperCol={{ offset: 0, span: 16 }}
             >
-              <Checkbox>自动登录</Checkbox>
+              <Checkbox>Remember Me</Checkbox>
             </Form.Item>
 
             <Form.Item wrapperCol={{ offset: 0, span: 24 }}>
@@ -77,7 +77,7 @@ const Login: React.FC = () => {
                 htmlType="submit"
                 style={{ width: "100%" }}
               >
-                登录
+                Login
               </Button>
             </Form.Item>
           </Form>
