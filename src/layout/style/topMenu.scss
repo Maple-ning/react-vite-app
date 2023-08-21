@@ -1,10 +1,10 @@
-$blogs-header-bg: #f6f7f8;
+$blogs-header-bg: #fff;
 
 .blogs-header {
   min-height: 64px;
   width: 100%;
   background: $blogs-header-bg;
-  box-shadow: 0 2px 4px #00000014;
+  box-shadow: rgb(208, 215, 222) 0px -1px 0px 0px inset;
 }
 
 .blogs-header-bar {

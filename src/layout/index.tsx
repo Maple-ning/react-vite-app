@@ -9,15 +9,11 @@ import "@/assets/styles/layout.scss";
 function LayoutContainer() {
     return (
         <Layout className="layout-container">
-            <Layout>
-                <Layout className="layout-content-wrap">
-                    <Header />
-                    <Content>
-                        <Outlet />
-                    </Content>
-                    <Footer />
-                </Layout>
-            </Layout>
+            <Header />
+            <Content className="layout-content-main">
+                <Outlet />
+            </Content>
+            <Footer />
         </Layout>
     );
 }

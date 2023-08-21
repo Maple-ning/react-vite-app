@@ -5,7 +5,7 @@ const {  Footer } = Layout;
 
 const FooterView = () => {
   return (
-    <Footer className="footer-container">Blogs by Ning</Footer>
+    <Footer className="footer-container">React Study Project</Footer>
   )
 }
 
