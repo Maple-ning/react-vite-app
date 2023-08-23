@@ -1,0 +1,23 @@
+.about-view {
+  height: 100%;
+  padding: 24px 16px;
+}
+
+.about-card {
+  height: 100%;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  .profile-box {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid gray;
+  }
+}
