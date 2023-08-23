@@ -1,4 +1,5 @@
-*{
+@import "./basic.scss";
+* {
   margin: 0;
   padding: 0;
 }
@@ -8,7 +9,7 @@ body {
   // 禁止文字选中
   user-select: none;
 }
-img{
+img {
   // 禁止拖动图片
   -webkit-user-drag: none;
 }

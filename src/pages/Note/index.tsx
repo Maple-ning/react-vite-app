@@ -1,9 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const Note:React.FC = () => {
-  return <div>
-    Note
-  </div>
-}
+const Note: React.FC = () => {
+  return <div className="root">Note</div>;
+};
 
 export default Note;
