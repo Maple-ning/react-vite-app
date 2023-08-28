@@ -13,3 +13,31 @@ img {
   // 禁止拖动图片
   -webkit-user-drag: none;
 }
+
+//走马灯div宽高百分比
+.ant-carousel {
+  height: 100%;
+  width: 100%;
+}
+.ant-carousel .slick-slider {
+  height: 100%;
+  width: 100%;
+}
+.slick-list {
+  height: 100% !important;
+  width: 100%;
+}
+.slick-track {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.slick-slide {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  div {
+    width: 100%;
+    height: 100%;
+  }
+}

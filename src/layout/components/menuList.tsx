@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation  } from "react-router-dom";
 import "../style/topMenu.scss";
 import { useLocalStorage } from "@/hooks";
 
@@ -30,6 +30,7 @@ const items: MenuProps['items'] = [
 
 const menuList: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [getLocalSelect, setLocalSelect] = useLocalStorage("selectKey");
   const [selectKey, setSelectKey] = useState(getLocalSelect() || "/home");
 
@@ -40,7 +41,13 @@ const menuList: React.FC = () => {
   };
   useEffect(() => {
     setLocalSelect(selectKey);
-  }, [setLocalSelect, selectKey])
+  }, [setLocalSelect, selectKey]);
+  useEffect(()=>{
+    const pathSplit = location.pathname.split('/');
+    const path = "/" + pathSplit[1];
+    setSelectKey(path);
+    
+  },[navigate]);
   return (
     <div className="menu-list">
       <Menu onClick={onClick} selectedKeys={[selectKey]} mode="horizontal" items={items} style={{ background: "transparent", width: 500 }} />

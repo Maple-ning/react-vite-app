@@ -5,8 +5,10 @@ const whiteList = ["/login"];
 
 const AuthRouter = (props) => {
   const { pathname } = useLocation();
-  const route = getKeyName(pathname);
   const token = getLocalStorage("learn-token") || { token: null };
+  if(pathname === '/'){
+    return <Navigate to="/home" replace />;
+  }
   if(token){
     return props.children;
   }else{
