@@ -8,47 +8,47 @@ const Home: React.FC = () => {
   const articles = [
     {
       name: "JavaScript高级程序设计",
-      type:"JavaScript",
+      type: "JavaScript",
       id: 123,
     },
     {
       name: "JavaScript高级程序设计",
-      type:"JavaScript",
+      type: "JavaScript",
       id: 123,
     },
     {
       name: "JavaScript高级程序设计",
-      type:"JavaScript",
+      type: "JavaScript",
       id: 123,
     },
     {
       name: "JavaScript高级程序设计",
-      type:"JavaScript",
+      type: "JavaScript",
       id: 123,
     },
     {
       name: "JavaScript高级程序设计",
-      type:"JavaScript",
+      type: "JavaScript",
       id: 123,
     },
     {
       name: "JavaScript高级程序设计",
-      type:"JavaScript",
+      type: "JavaScript",
       id: 123,
     },
     {
       name: "JavaScript高级程序设计",
-      type:"JavaScript",
+      type: "JavaScript",
       id: 123,
     },
     {
       name: "JavaScript高级程序设计",
-      type:"JavaScript",
+      type: "JavaScript",
       id: 123,
     },
     {
       name: "JavaScript高级程序设计",
-      type:"JavaScript",
+      type: "JavaScript",
       id: 123,
     },
   ];
@@ -126,7 +126,14 @@ const Home: React.FC = () => {
         <div style={{ height: 50 }}></div>
       </div>
       <div className="home-view-right">
-        <div className="home-person-side card-shadow"></div>
+        <div className="home-person-side card-shadow">
+          <div className="my-avatar">
+            <img src={loadImage("avatar.png")} alt="" />
+          </div>
+          <div className="my-name">Maple-Ning</div>
+          <div className="my-job">Web Developer</div>
+          <div className="my-info">I am a hard worker</div>
+        </div>
       </div>
     </div>
   );
