@@ -6,6 +6,8 @@
 .user-title {
   padding: 8px 8px 0 8px;
   height: 48px;
+  margin-bottom: 16px;
+  color: rgb(31, 35, 40);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -19,11 +21,18 @@
 }
 
 .user-li {
-  padding: 6px 8px 8px 8px;
+  padding: 8px;
   line-height: 21px;
   color: rgb(31, 35, 40);
   &:hover {
     background-color: rgba(208, 215, 222, 0.32);
     cursor: pointer;
   }
+}
+
+.bottom-line {
+  list-style: none;
+  height: 1px;
+  margin: 8px;
+  background: rgba(208, 215, 222, 0.48);
 }

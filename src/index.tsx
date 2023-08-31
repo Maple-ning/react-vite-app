@@ -12,11 +12,9 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <React.Suspense>
-    <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
-    </Provider>
-  </React.Suspense>
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>
 );

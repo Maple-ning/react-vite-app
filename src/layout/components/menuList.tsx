@@ -7,25 +7,25 @@ import { useLocalStorage } from "@/hooks";
 
 const items: MenuProps['items'] = [
   {
-    label: 'Home',
+    label: '首页',
     key: '/home',
   },
   {
-    label: 'Note',
+    label: '文章',
     key: '/note',
   },
-  {
-    label: (
-      <a href="https://github.com/Maple-ning" target="_top" rel="noopener noreferrer">
-        GitHub
-      </a>
-    ),
-    key: '/github',
-  },
-  {
-    label: 'About Me',
-    key: '/about',
-  },
+  // {
+  //   label: (
+  //     <a href="https://github.com/Maple-ning" target="_top" rel="noopener noreferrer">
+  //       GitHub
+  //     </a>
+  //   ),
+  //   key: '/github',
+  // },
+  // {
+  //   label: 'About Me',
+  //   key: '/about',
+  // },
 ];
 
 const menuList: React.FC = () => {
