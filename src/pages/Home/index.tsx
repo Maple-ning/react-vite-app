@@ -1,75 +1,23 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { loadImage } from "@/utils/image";
+import { getHomeList } from "@/api/home";
 import "./index.scss";
 import { Image, Tag, Carousel } from 'antd';
 
 const Home: React.FC = () => {
-  const articles = [
-    {
-      name: "JavaScript高级程序设计",
-      type: "JavaScript",
-      id: 123,
-    },
-    {
-      name: "JavaScript高级程序设计",
-      type: "JavaScript",
-      id: 123,
-    },
-    {
-      name: "JavaScript高级程序设计",
-      type: "JavaScript",
-      id: 123,
-    },
-    {
-      name: "JavaScript高级程序设计",
-      type: "JavaScript",
-      id: 123,
-    },
-    {
-      name: "JavaScript高级程序设计",
-      type: "JavaScript",
-      id: 123,
-    },
-    {
-      name: "JavaScript高级程序设计",
-      type: "JavaScript",
-      id: 123,
-    },
-    {
-      name: "JavaScript高级程序设计",
-      type: "JavaScript",
-      id: 123,
-    },
-    {
-      name: "JavaScript高级程序设计",
-      type: "JavaScript",
-      id: 123,
-    },
-    {
-      name: "JavaScript高级程序设计",
-      type: "JavaScript",
-      id: 123,
-    },
-  ];
-  const pictures = [
-    {
-      url: "sky.jpg",
-      name: "123",
-    },
-    {
-      url: "book.jpg",
-      name: "123",
-    },
-    {
-      url: "book1.jpeg",
-      name: "123",
-    },
-    {
-      url: "yinianyongheng.jpg",
-      name: "123",
-    },
-  ]
+  const [articles,setArticles] = useState([]);
+  const [pictures,setPictures] = useState([]);
+  useEffect(()=>{
+    getHomeList().then((res)=>{
+      if(res.code === 200){
+        setArticles(res.data);
+      }
+    })
+  },[])
+  useEffect(()=>{
+    setPictures(articles.slice(0,4));
+  },[articles])
 
   const contentStyle: React.CSSProperties = {
     margin: 0,
@@ -117,8 +65,7 @@ const Home: React.FC = () => {
                   style={{ width: "100%" }}
                   preview={false}
                   className="article-image"
-                  src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-                />
+                  src={loadImage(item.url)}/>
               </div>
             })
           }

@@ -1,36 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Image, Tag, Carousel } from 'antd';
+import { Image } from 'antd';
+import { getHomeList } from "@/api/home";
 import { loadImage } from "@/utils/image";
 import "./index.scss";
 
 const Note: React.FC = () => {
-  const list = [
-    {
-      url: "sky.jpg",
-      name: "123",
-    },
-    {
-      url: "book.jpg",
-      name: "123",
-    },
-    {
-      url: "book1.jpeg",
-      name: "123",
-    },
-    {
-      url: "yinianyongheng.jpg",
-      name: "123",
-    },
-    {
-      url: "sky.jpg",
-      name: "123",
-    },
-    {
-      url: "book.jpg",
-      name: "123",
-    },
-  ];
+  const [list, setList] = useState([]);
+  useEffect(() => {
+    getHomeList().then((res) => {
+      if (res.code === 200) {
+        setList(res.data);
+      }
+    })
+  }, []);
+
   const navigate = useNavigate();
   const toDetail = () => navigate("/note/123");
   return <div className="note-view root">
@@ -45,9 +29,9 @@ const Note: React.FC = () => {
             />
           </div>
           <div className="detail-wrapper">
-            <div className="article-title">JavaScript</div>
-            <div className="article-publish-time">2023.05.14</div>
-            <div className="article-intro">This is JavaScript Note</div>
+            <div className="article-title">{item.name}</div>
+            <div className="article-publish-time">{item.name}</div>
+            <div className="article-intro">{item.introduce}</div>
           </div>
         </div>
       }
