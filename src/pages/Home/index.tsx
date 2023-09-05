@@ -1,32 +1,32 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { loadImage } from "@/utils/image";
 import { getHomeList } from "@/api/home";
 import "./index.scss";
-import { Image, Tag, Carousel } from 'antd';
+import { Image, Tag, Carousel } from "antd";
 
 const Home: React.FC = () => {
-  const [articles,setArticles] = useState([]);
-  const [pictures,setPictures] = useState([]);
-  useEffect(()=>{
-    getHomeList().then((res)=>{
-      if(res.code === 200){
+  const [articles, setArticles] = useState([]);
+  const [pictures, setPictures] = useState([]);
+  useEffect(() => {
+    getHomeList().then((res) => {
+      if (res.code === 200) {
         setArticles(res.data);
       }
-    })
-  },[])
-  useEffect(()=>{
-    setPictures(articles.slice(0,4));
-  },[articles])
+    });
+  }, []);
+  useEffect(() => {
+    setPictures(articles.slice(0, 4));
+  }, [articles]);
 
   const contentStyle: React.CSSProperties = {
     margin: 0,
-    height: '300px',
-    width: '100%',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
+    height: "300px",
+    width: "100%",
+    color: "#fff",
+    lineHeight: "160px",
+    textAlign: "center",
+    background: "#364d79",
   };
   const navigate = useNavigate();
 
@@ -34,41 +34,53 @@ const Home: React.FC = () => {
     navigate(`/note/${name}`);
   };
 
-
   return (
     <div className="home-view root">
       <div className="home-view-left">
         <div className="home-header card-shadow">
           <Carousel autoplay>
-            {
-              pictures.map((item, index) => {
-                return <div key={index} style={contentStyle} onClick={() => toDetail(item.name)}>
+            {pictures.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  style={contentStyle}
+                  className="carousel-box"
+                  onClick={() => toDetail(item.name)}
+                >
+                  <span className="carousel-title">{item.name}</span>
                   <Image
                     style={{ width: "100%" }}
                     preview={false}
                     src={loadImage(item.url)}
                   />
                 </div>
-              })
-            }
+              );
+            })}
           </Carousel>
         </div>
         <div className="home-article-list">
-          {
-            articles.map((item, index) => {
-              return <div key={index} className="article-item card-shadow" onClick={() => toDetail(item)}>
+          {articles.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="article-item card-shadow"
+                onClick={() => toDetail(item)}
+              >
                 <div className="article-info">
-                  <div className="article-type"><Tag color="#0000004d">{item.type}</Tag></div>
+                  <div className="article-type">
+                    <Tag color="#0000004d">{item.type}</Tag>
+                  </div>
                   <div className="article-introduction">{item.name}</div>
                 </div>
                 <Image
                   style={{ width: "100%" }}
                   preview={false}
                   className="article-image"
-                  src={loadImage(item.url)}/>
+                  src={loadImage(item.url)}
+                />
               </div>
-            })
-          }
+            );
+          })}
         </div>
         <div style={{ height: 50 }}></div>
       </div>

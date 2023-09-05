@@ -28,11 +28,19 @@
   }
   .note-right {
     width: 240px;
-    background: #fff;
     margin-left: 24px;
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;
+  }
+  .articel-reading-top {
+    background: #fff;
+    height: 300px;
+    margin-bottom: 16px;
+  }
+  .articel-collect-top {
+    background: #fff;
+    flex-grow: 1;
   }
 }
 
@@ -47,7 +55,7 @@
   }
 }
 
-.detail-wrapper {
+.article-wrapper {
   flex: 1;
   margin-left: 16px;
   padding: 8px;

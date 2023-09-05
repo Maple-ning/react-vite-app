@@ -17,63 +17,63 @@
     "name": "typicode"
   },
   "home": {
-    "code":200,
-    "data":[
+    "code": 200,
+    "data": [
       {
-        "name":"JavaScript高级程序设计1",
-        "type":"JavaScript",
-        "url":"book.jpg",
-        "time":"2023-08-31",
-        "introduce":"这是<<JavaScript高级程序设计1>>的介绍"
+        "name": "JavaScript高级程序设计1",
+        "type": "JavaScript",
+        "url": "book.jpg",
+        "time": "2023-08-31",
+        "introduce": "这是<<JavaScript高级程序设计1>>的介绍"
       },
       {
-        "name":"JavaScript高级程序设计2",
-        "type":"JavaScript",
-        "url":"book.jpg",
-        "time":"2023-08-31",
-        "introduce":"这是<<JavaScript高级程序设计2>>的介绍"
+        "name": "JavaScript高级程序设计2",
+        "type": "JavaScript",
+        "url": "book.jpg",
+        "time": "2023-08-31",
+        "introduce": "这是<<JavaScript高级程序设计2>>的介绍"
       },
       {
-        "name":"JavaScript高级程序设计3",
-        "type":"JavaScript",
-        "url":"book.jpg",
-        "time":"2023-08-31",
-        "introduce":"这是<<JavaScript高级程序设计3>>的介绍"
+        "name": "JavaScript高级程序设计3",
+        "type": "JavaScript",
+        "url": "book.jpg",
+        "time": "2023-08-31",
+        "introduce": "这是<<JavaScript高级程序设计3>>的介绍"
       },
       {
-        "name":"JavaScript高级程序设计4",
-        "type":"JavaScript",
-        "url":"book.jpg",
-        "time":"2023-08-31",
-        "introduce":"这是<<JavaScript高级程序设计4>>的介绍"
+        "name": "JavaScript高级程序设计4",
+        "type": "JavaScript",
+        "url": "book.jpg",
+        "time": "2023-08-31",
+        "introduce": "这是<<JavaScript高级程序设计4>>的介绍"
       },
       {
-        "name":"CSS入门",
-        "type":"CSS",
-        "url":"book.jpg",
-        "time":"2023-08-31",
-        "introduce":"这是<<CSS入门>>的介绍"
+        "name": "CSS入门",
+        "type": "CSS",
+        "url": "book.jpg",
+        "time": "2023-08-31",
+        "introduce": "这是<<CSS入门>>的介绍"
       },
       {
-        "name":"CSS应用",
-        "type":"CSS",
-        "url":"book.jpg",
-        "time":"2023-08-31",
-        "introduce":"这是<<CSS应用>>的介绍"
+        "name": "CSS应用",
+        "type": "CSS",
+        "url": "book.jpg",
+        "time": "2023-08-31",
+        "introduce": "这是<<CSS应用>>的介绍"
       },
       {
-        "name":"CSS高级进阶",
-        "type":"CSS",
-        "url":"book.jpg",
-        "time":"2023-08-31",
-        "introduce":"这是<<CSS高级进阶>>的介绍"
+        "name": "CSS高级进阶",
+        "type": "CSS",
+        "url": "book.jpg",
+        "time": "2023-08-31",
+        "introduce": "这是<<CSS高级进阶>>的介绍"
       },
       {
-        "name":"应用CSS",
-        "type":"CSS",
-        "url":"book.jpg",
-        "time":"2023-08-31",
-        "introduce":"这是<<应用CSS>>的介绍"
+        "name": "应用CSS",
+        "type": "CSS",
+        "url": "book.jpg",
+        "time": "2023-08-31",
+        "introduce": "这是<<应用CSS>>的介绍"
       }
     ]
   }
