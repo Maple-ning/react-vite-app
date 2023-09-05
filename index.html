@@ -1,13 +1,42 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Learning System</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/index.tsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/maple.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>枫叶Home</title>
+  <style>
+    #bg,
+    #bg:before {
+      height: 100%;
+      top: 0;
+      width: 100%;
+    }
+
+    #bg {
+      background-image: url("/bg.jpeg");
+      background-position: 100% 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: fixed;
+      z-index: -1;
+    }
+
+    #bg:before {
+      background-color: #fffffff0;
+      content: "";
+      left: 0;
+      position: absolute;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <div id="bg"></div>
+  <script type="module" src="/src/index.tsx"></script>
+</body>
+
 </html>

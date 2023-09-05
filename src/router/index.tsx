@@ -12,8 +12,8 @@ const lazyLoad = (Component) => (
 const Layout = lazy(() => import('@/layout'));
 const Login = lazy(() => import('@/pages/Login'));
 const Home = lazy(() => import('@/pages/Home'));
-const Note = lazy(() => import('@/pages/Note'));
-const NoteDetail = lazy(() => import('@/pages/Note/Detail'));
+const Article = lazy(() => import('@/pages/Article'));
+const ArticleDetail = lazy(() => import('@/pages/Article/Detail'));
 const About = lazy(() => import('@/pages/About'));
 const Error404 = lazy(() => import('@/pages/Error404'));
 
@@ -34,14 +34,14 @@ const rootRouter = [
       },
       {
         name: '笔记',
-        key: 'note',
-        path: 'note',
-        element: lazyLoad(Note),
+        key: 'article',
+        path: 'article',
+        element: lazyLoad(Article),
       },
       {
         key: 'nodeDetail',
-        path: "note/:id",
-        element: lazyLoad(NoteDetail),
+        path: "article/:id",
+        element: lazyLoad(ArticleDetail),
       },
       {
         name: '关于我',

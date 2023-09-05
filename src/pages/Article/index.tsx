@@ -40,9 +40,9 @@ const items: TabsProps["items"] = [
   },
 ];
 
-const Note: React.FC = () => {
+const Article: React.FC = () => {
   const navigate = useNavigate();
-  const toDetail = () => navigate("/note/123");
+  const toDetail = () => navigate("/article/123");
 
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<DataType[]>([]);
@@ -74,11 +74,11 @@ const Note: React.FC = () => {
     loadMoreData();
   }, []);
   return (
-    <div className="note-view root">
-      <div className="note-left card-shadow">
+    <div className="article-view root">
+      <div className="article-left card-shadow">
         <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
         <div
-          className="note-list"
+          className="article-list"
           id="scrollableDiv"
           style={{
             overflow: "auto",
@@ -94,7 +94,7 @@ const Note: React.FC = () => {
           >
             {data.map((item, index) => {
               return (
-                <div key={index} className="note-item" onClick={toDetail}>
+                <div key={index} className="article-item" onClick={toDetail}>
                   <div className="image-wrapper">
                     <Image
                       style={{ width: "100%" }}
@@ -115,12 +115,12 @@ const Note: React.FC = () => {
           </InfiniteScroll>
         </div>
       </div>
-      <div className="note-right">
-        <div className="articel-reading-top card-shadow"></div>
-        <div className="articel-collect-top card-shadow"></div>
+      <div className="article-right">
+        <div className="article-reading-top card-shadow"></div>
+        <div className="article-collect-top card-shadow"></div>
       </div>
     </div>
   );
 };
 
-export default Note;
+export default Article;

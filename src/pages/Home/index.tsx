@@ -31,67 +31,69 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
 
   const toDetail = (name: string) => {
-    navigate(`/note/${name}`);
+    navigate(`/article/${name}`);
   };
 
   return (
-    <div className="home-view root">
-      <div className="home-view-left">
-        <div className="home-header card-shadow">
-          <Carousel autoplay>
-            {pictures.map((item, index) => {
+    <div className="root">
+      <div className="home-view card-shadow">
+        <div className="home-view-left">
+          <div className="home-header">
+            <Carousel autoplay>
+              {pictures.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    style={contentStyle}
+                    className="carousel-box"
+                    onClick={() => toDetail(item.name)}
+                  >
+                    <span className="carousel-title">{item.name}</span>
+                    <Image
+                      style={{ width: "100%" }}
+                      preview={false}
+                      src={loadImage(item.url)}
+                    />
+                  </div>
+                );
+              })}
+            </Carousel>
+          </div>
+          <div className="home-article-list">
+            {articles.map((item, index) => {
               return (
                 <div
                   key={index}
-                  style={contentStyle}
-                  className="carousel-box"
-                  onClick={() => toDetail(item.name)}
+                  className="article-item card-shadow"
+                  onClick={() => toDetail(item)}
                 >
-                  <span className="carousel-title">{item.name}</span>
+                  <div className="article-info">
+                    <div className="article-type">
+                      <Tag color="#0000004d">{item.type}</Tag>
+                    </div>
+                    <div className="article-introduction">{item.name}</div>
+                  </div>
                   <Image
                     style={{ width: "100%" }}
                     preview={false}
+                    className="article-image"
                     src={loadImage(item.url)}
                   />
                 </div>
               );
             })}
-          </Carousel>
-        </div>
-        <div className="home-article-list">
-          {articles.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className="article-item card-shadow"
-                onClick={() => toDetail(item)}
-              >
-                <div className="article-info">
-                  <div className="article-type">
-                    <Tag color="#0000004d">{item.type}</Tag>
-                  </div>
-                  <div className="article-introduction">{item.name}</div>
-                </div>
-                <Image
-                  style={{ width: "100%" }}
-                  preview={false}
-                  className="article-image"
-                  src={loadImage(item.url)}
-                />
-              </div>
-            );
-          })}
-        </div>
-        <div style={{ height: 50 }}></div>
-      </div>
-      <div className="home-view-right">
-        <div className="home-person-side card-shadow">
-          <div className="my-avatar">
-            <img src={loadImage("avatar.png")} alt="" />
           </div>
-          <div className="my-name">Maple-Ning</div>
-          <div className="my-job">Web Developer</div>
-          <div className="my-info">I am a hard worker</div>
+          <div style={{ height: 50 }}></div>
+        </div>
+        <div className="home-view-right">
+          <div className="home-person-side">
+            <div className="my-avatar">
+              <img src={loadImage("avatar.png")} alt="" />
+            </div>
+            <div className="my-name">Maple-Ning</div>
+            <div className="my-job">Web Developer</div>
+            <div className="my-info">I am a hard worker</div>
+          </div>
         </div>
       </div>
     </div>

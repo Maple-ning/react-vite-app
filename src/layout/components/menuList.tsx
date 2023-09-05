@@ -12,7 +12,7 @@ const items: MenuProps['items'] = [
   },
   {
     label: '文章',
-    key: '/note',
+    key: '/article',
   },
   // {
   //   label: (

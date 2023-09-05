@@ -1,10 +1,10 @@
 import React from "react";
 import "./index.scss";
 
-const NoteDetail:React.FC = () => {
+const ArticleDetail:React.FC = () => {
   return <div className="node-detail-view root card-shadow">
-    <h1>JavaScript Note</h1>
+    <h1>JavaScript Article</h1>
   </div>
 }
 
-export default NoteDetail;
+export default ArticleDetail;

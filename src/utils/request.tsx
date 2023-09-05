@@ -41,7 +41,7 @@ http.interceptors.response.use(
     } else if (error.request) {
       // 请求未收到响应，可能是网络错误或服务器未响应等
       // 进行相应的处理，如显示网络错误提示、重试操作等
-      message.error("网络错误");
+      message.error("服务器连接失败，请重试！");
     } else {
       // 其他错误
       // 进行相应的处理，如显示错误提示、跳转页面等
