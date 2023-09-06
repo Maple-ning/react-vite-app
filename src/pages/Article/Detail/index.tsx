@@ -4,7 +4,8 @@ import "./index.scss";
 const ArticleDetail: React.FC = () => {
   return (
     <div className="root">
-      <div className="article-detail-view"></div>
+      <div className="article-detail-view card-shadow">
+      </div>
     </div>
   );
 };

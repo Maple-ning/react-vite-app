@@ -18,7 +18,7 @@
 
   .article-left {
     width: 80%;
-    background: #fff;
+    background: $bg-virtual;
     display: flex;
     flex-direction: column;
     padding: 16px;
@@ -32,12 +32,12 @@
     flex-direction: column;
   }
   .article-reading-top {
-    background: #fff;
+    background: $bg-virtual;
     height: 300px;
     margin-bottom: 16px;
   }
   .article-collect-top {
-    background: #fff;
+    background: $bg-virtual;
     height: 300px;
   }
 }

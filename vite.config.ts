@@ -6,9 +6,17 @@ export default defineConfig({
   plugins: [
     react()
   ],
-  resolve:{
-    alias:{
-      "@":path.resolve(__dirname,"./src")
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src")
     }
-  }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "./src/assets/styles/variables.scss";',
+        javascriptEnabled: true
+      },
+    }
+  },
 })

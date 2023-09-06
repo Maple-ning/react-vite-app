@@ -7,10 +7,33 @@
 
 .layout-content-main {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .footer-container {
   text-align: center;
   box-shadow: rgb(208, 215, 222) 0px 1px 0px 0px inset;
+}
+
+.bg {
+  background-image: url("/bg.jpeg");
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  z-index: -1;
+
+  // &:before {
+  //   background-color: $bg-virtual;
+  //   content: "";
+  //   left: 0;
+  //   position: absolute;
+  // }
+}
+
+.bg,
+.bg:before {
+  height: 100%;
+  top: 0;
+  width: 100%;
 }

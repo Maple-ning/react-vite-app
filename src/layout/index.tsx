@@ -12,6 +12,7 @@ function LayoutContainer() {
       <Content className="layout-content-main">
         <Outlet />
       </Content>
+      <div className="bg"></div>
       {/* <Footer /> */}
     </Layout>
   );
