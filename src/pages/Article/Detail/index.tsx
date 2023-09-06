@@ -1,10 +1,12 @@
 import React from "react";
 import "./index.scss";
 
-const ArticleDetail:React.FC = () => {
-  return <div className="node-detail-view root card-shadow">
-    <h1>JavaScript Article</h1>
-  </div>
-}
+const ArticleDetail: React.FC = () => {
+  return (
+    <div className="root">
+      <div className="article-detail-view"></div>
+    </div>
+  );
+};
 
 export default ArticleDetail;

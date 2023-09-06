@@ -38,6 +38,7 @@ const Home: React.FC = () => {
     <div className="root">
       <div className="home-view card-shadow">
         <div className="home-view-left">
+          {/* 头部轮播图  */}
           <div className="home-header">
             <Carousel autoplay>
               {pictures.map((item, index) => {
@@ -59,6 +60,7 @@ const Home: React.FC = () => {
               })}
             </Carousel>
           </div>
+          {/* 文章列表 */}
           <div className="home-article-list">
             {articles.map((item, index) => {
               return (
