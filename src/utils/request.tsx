@@ -1,24 +1,27 @@
-import axios, { AxiosRequestConfig } from 'axios';
-import { message } from 'antd';
+import axios, { AxiosRequestConfig } from "axios";
+import { message } from "antd";
 
 const http = axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: "http://106.15.248.240/api/",
   headers: {
     "Content-Type": "application/json",
   },
   timeout: 3000,
-  withCredentials: false// 跨域时候允许携带凭证
+  withCredentials: false, // 跨域时候允许携带凭证
 });
 
 // 请求拦截器
-http.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token');
-  config.headers!.token = token;//非空断言!
-  return config;
-}, (error) => {
-  message.error("配置错误");
-  return Promise.reject(error);
-});
+http.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("token");
+    config.headers!.token = token; //非空断言!
+    return config;
+  },
+  (error) => {
+    message.error("配置错误");
+    return Promise.reject(error);
+  }
+);
 
 // 响应拦截器
 http.interceptors.response.use(
@@ -51,15 +54,15 @@ http.interceptors.response.use(
   }
 );
 
-export default function request (config:AxiosRequestConfig){
-  const {method='get',url='',data={}} = config;
- 
-  switch(method.toUpperCase()){
-    case 'GET':
-      return http.get(url,{params:data})
-    case 'POST':
-      return http.post(url,data)
+export default function request(config: AxiosRequestConfig) {
+  const { method = "get", url = "", data = {} } = config;
+
+  switch (method.toUpperCase()) {
+    case "GET":
+      return http.get(url, { params: data });
+    case "POST":
+      return http.post(url, data);
     default:
-      return http(config)//其他参数 PUT,DEL
+      return http(config); //其他参数 PUT,DEL
   }
 }
