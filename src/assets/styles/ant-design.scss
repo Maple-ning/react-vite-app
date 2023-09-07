@@ -26,10 +26,20 @@
       height: 100%;
     }
   }
+  .home-dots {
+    li {
+      margin: 0 8px;
+    }
+    li button{
+      background: #000;
+      height: 12px;
+    }
+  }
 }
 
+
 // layout
-.ant-layout{
+.ant-layout {
   background: none;
 }
 
