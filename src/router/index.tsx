@@ -10,7 +10,6 @@ const lazyLoad = (Component) => (
 
 // 路由组件引入
 const Layout = lazy(() => import('@/layout'));
-const Login = lazy(() => import('@/pages/Login'));
 const Home = lazy(() => import('@/pages/Home'));
 const Article = lazy(() => import('@/pages/Article'));
 const ArticleDetail = lazy(() => import('@/pages/Article/Detail'));

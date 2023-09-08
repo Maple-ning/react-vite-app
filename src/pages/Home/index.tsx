@@ -5,7 +5,6 @@ import { getHomeRecommend, getHomeList } from "@/api/home";
 import "./index.scss";
 import { CalendarOutlined } from '@ant-design/icons';
 import { Image, Tag, Carousel } from "antd";
-import HomeCanvas from "@/components/HomeCanvas";
 
 const Home: React.FC = () => {
   const [articles, setArticles] = useState([]);
@@ -43,7 +42,6 @@ const Home: React.FC = () => {
     <>
       <div className="root">
         <div className="home-view" id="read">
-          <HomeCanvas/>
           {/* 头部轮播图  */}
           <div className="home-header card-shadow">
             <Carousel autoplay dots={{ className: "home-dots" }}>
