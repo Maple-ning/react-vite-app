@@ -7,6 +7,7 @@
   .slick-slider {
     height: 100%;
     width: 100%;
+    padding-bottom: 20px;
   }
   .slick-list {
     height: 100% !important;
@@ -30,13 +31,18 @@
     li {
       margin: 0 8px;
     }
-    li button{
+    li.slick-active button {
+      background-color: skyblue;
+    }
+    li button {
       background: #000;
       height: 12px;
+      &:hover {
+        background-color: skyblue;
+      }
     }
   }
 }
-
 
 // layout
 .ant-layout {

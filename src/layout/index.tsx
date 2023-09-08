@@ -1,7 +1,6 @@
 import { Layout } from "antd";
 import { Outlet } from "react-router-dom";
 import Header from "./topMenu";
-// import Footer from "./Footer";
 const { Content } = Layout;
 import "@/assets/styles/layout.scss";
 
@@ -13,7 +12,6 @@ function LayoutContainer() {
         <Outlet />
       </Content>
       <div className="bg"></div>
-      {/* <Footer /> */}
     </Layout>
   );
 }

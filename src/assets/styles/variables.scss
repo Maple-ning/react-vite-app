@@ -1,5 +1,7 @@
 $bg-virtual: #fffffff0;
+$blogs-header-bg: #fff;
 
 :export {
   bgVirtual: $bg-virtual;
+  blogsHeaderBg: $blogs-header-bg;
 }

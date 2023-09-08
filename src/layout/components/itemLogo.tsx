@@ -1,5 +1,4 @@
 import React from 'react';
-import "../style/topMenu.scss";
 
 const itemLogo: React.FC = () => {
   return (

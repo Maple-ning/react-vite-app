@@ -52,13 +52,6 @@ const rootRouter = [
     ],
   },
   {
-    index: false,
-    path: 'login',
-    name: '登录',
-    key: '/login',
-    element: lazyLoad(Login),
-  },
-  {
     path: '*',
     name: 'No Match',
     key: '*',

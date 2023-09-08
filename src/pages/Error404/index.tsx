@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Result } from "antd";
 import { useNavigate } from "react-router-dom";
 
 const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
+  useEffect(()=>{
+    setTimeout(() => {
+      navigate("/home");
+    }, 1000);
+  },[]);
   return (
     <div
       style={{
@@ -15,13 +20,8 @@ const NotFoundPage: React.FC = () => {
     >
       <Result
         status="404"
-        title="404"
-        subTitle="对不起，此页面不存在."
-        extra={
-          <Button type="primary" onClick={() => navigate("/home")}>
-            Back Home
-          </Button>
-        }
+        title="页面不存在"
+        subTitle="对不起，此页面不存在.即将返回首页..."
       />
     </div>
   );

@@ -116,8 +116,12 @@ const Article: React.FC = () => {
         </div>
       </div>
       <div className="article-right">
-        <div className="article-reading-top card-shadow"></div>
-        <div className="article-collect-top card-shadow"></div>
+        <div className="article-reading-top card-shadow">
+          分类
+        </div>
+        <div className="article-collect-top card-shadow">
+          标签
+        </div>
       </div>
     </div>
   );

@@ -1,40 +1,10 @@
 $spacing: 16px;
 
-.home-bg {
+.home-canvas{
   width: 100%;
-  height: 100vh;
-  position: relative;
-  background-image: url("../../assets/image/home.jpg");
-  background-attachment: fixed;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 600px;
+  background-color: #fff;
   margin-bottom: 20px;
-  .welcome-title {
-    position: absolute;
-    top: 20%;
-    width: 100%;
-    color: white;
-    -webkit-user-select: none;
-    user-select: none;
-    font-size: 60px;
-    font-weight: 700;
-    text-align: center;
-    z-index: 1;
-  }
-  .start-read {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    color: white;
-    -webkit-user-select: none;
-    user-select: none;
-    font-size: 40px;
-    font-weight: 700;
-    text-align: center;
-    cursor: pointer;
-    z-index: 1;
-  }
 }
 
 .home-view {
@@ -45,10 +15,9 @@ $spacing: 16px;
 .home-header {
   width: 100%;
   height: 600px;
-  border-radius: 4px;
+  padding: 8px 8px 0 8px;
   background-color: $bg-virtual;
   margin-bottom: $spacing;
-  padding: 8px;
   overflow: hidden;
   .carousel-box {
     position: relative;
