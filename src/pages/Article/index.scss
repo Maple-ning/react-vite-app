@@ -31,20 +31,38 @@
     display: flex;
     flex-direction: column;
   }
-  .article-reading-top {
+  .article-classify-box {
     padding: 16px;
-    font-size: 20px;
-    font-weight: 500;
     background: $bg-virtual;
-    height: 300px;
     margin-bottom: 16px;
+    .article-classify-title {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .classify-li {
+      height: 25px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
   }
-  .article-collect-top {
+  .article-tag-box {
     padding: 16px;
-    font-size: 20px;
-    font-weight: 500;
     background: $bg-virtual;
-    height: 300px;
+    margin-bottom: 16px;
+    .article-tag-title {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .article-ul {
+      display: flex;
+      flex-wrap: wrap;
+      > li {
+        padding: 10px;
+      }
+    }
   }
 }
 

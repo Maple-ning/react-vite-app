@@ -5,9 +5,10 @@ import { getHomeList } from "@/api/home";
 import { loadImage } from "@/utils/image";
 import { Tabs, Tag } from "antd";
 import type { TabsProps } from "antd";
+import categoryIcon from "@/assets/icon/category.svg";
 import "./index.scss";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Avatar, Divider, List, Skeleton } from "antd";
+import { Divider, Skeleton } from "antd";
 
 interface DataType {
   gender: string;
@@ -37,6 +38,60 @@ const items: TabsProps["items"] = [
   {
     key: "3",
     label: "最新",
+  },
+];
+
+const category = [
+  {
+    key: "1",
+    label: "ES5",
+  },
+  {
+    key: "2",
+    label: "ES6",
+  },
+  {
+    key: "3",
+    label: "CSS3",
+  },
+  {
+    key: "4",
+    label: "HTML5",
+  },
+  {
+    key: "5",
+    label: "Vue2",
+  },
+  {
+    key: "6",
+    label: "Vu3",
+  },
+  {
+    key: "7",
+    label: "Webpack",
+  },
+];
+
+const tags = [
+  {
+    key: 1,
+    name: "前端",
+  },
+  {
+    key: 2,
+    name: "后端",
+  },
+  {
+    key: 3,
+    name: "浏览器",
+  },
+  {
+    key: 4,
+    name: "小程序",
+  },
+  {
+    key: 5,
+    name: "算法",
   },
 ];
 
@@ -116,11 +171,26 @@ const Article: React.FC = () => {
         </div>
       </div>
       <div className="article-right">
-        <div className="article-reading-top card-shadow">
-          分类
+        <div className="article-classify-box card-shadow">
+          <div className="article-classify-title">分类</div>
+          <ul>
+            {category.map((item) => {
+              return (
+                <li key={item.key} className="classify-li">
+                  <img src={categoryIcon} style={{ marginRight: 10 }} />
+                  <span>{item.label}</span>
+                </li>
+              );
+            })}
+          </ul>
         </div>
-        <div className="article-collect-top card-shadow">
-          标签
+        <div className="article-tag-box card-shadow">
+          <div className="article-tag-title">标签</div>
+          <ul className="article-ul">
+            {tags.map((item) => {
+              return <li key={item.key}>{item.name}</li>;
+            })}
+          </ul>
         </div>
       </div>
     </div>
