@@ -8,7 +8,7 @@ function LayoutContainer() {
   return (
     <Layout className="layout-container">
       <Header />
-      <Content className="layout-content-main">
+      <Content className="layout-content-main" id="layout-content">
         <Outlet />
       </Content>
       <div className="bg"></div>
