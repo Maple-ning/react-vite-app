@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./index.scss";
 import ReactMarkdown from 'react-markdown';
 import gfm from "remark-gfm";
-import MarkNav from 'markdown-navbar';
 import 'markdown-navbar/dist/navbar.css';
 import { getArticleDetail } from "@/api/article";
 import "@/assets/styles/markdown.scss";
