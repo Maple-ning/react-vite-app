@@ -9,6 +9,7 @@ import categoryIcon from "@/assets/icon/category.svg";
 import "./index.scss";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Divider, Skeleton } from "antd";
+import TagIcon from "@/assets/icon/tagIcon";
 
 interface DataType {
   gender: string;
@@ -26,20 +27,7 @@ interface DataType {
   nat: string;
 }
 
-const items: TabsProps["items"] = [
-  {
-    key: "1",
-    label: "关注",
-  },
-  {
-    key: "2",
-    label: "推荐",
-  },
-  {
-    key: "3",
-    label: "最新",
-  },
-];
+
 
 const category = [
   {
@@ -131,7 +119,6 @@ const Article: React.FC = () => {
   return (
     <div className="article-view root">
       <div className="article-left card-shadow">
-        <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
         <div
           className="article-list"
           id="scrollableDiv"
@@ -177,8 +164,8 @@ const Article: React.FC = () => {
             {category.map((item) => {
               return (
                 <li key={item.key} className="classify-li">
-                  <img src={categoryIcon} style={{ marginRight: 10 }} />
-                  <span>{item.label}</span>
+                  <TagIcon style={{ marginRight: 10 }} />
+                  <span style={{ fontSize: 16, fontWeight: 600 }}>{item.label}</span>
                 </li>
               );
             })}
@@ -188,7 +175,7 @@ const Article: React.FC = () => {
           <div className="article-tag-title">标签</div>
           <ul className="article-ul">
             {tags.map((item) => {
-              return <li key={item.key}>{item.name}</li>;
+              return <li key={item.key} className="tag-li">{item.name}</li>;
             })}
           </ul>
         </div>

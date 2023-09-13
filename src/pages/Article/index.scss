@@ -37,30 +37,52 @@
     margin-bottom: 16px;
     .article-classify-title {
       font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 10px;
+      font-weight: 700;
+      padding-bottom: 10px;
+      margin-bottom: 6px;
+      border-bottom: 2px solid #e4e6eb;
     }
     .classify-li {
       height: 25px;
       list-style: none;
       display: flex;
       align-items: center;
+      padding: 8px;
+      &:hover {
+        cursor: pointer;
+        border-radius: 4px;
+        background-color: $main-icon-color;
+      }
     }
   }
   .article-tag-box {
     padding: 16px;
     background: $bg-virtual;
-    margin-bottom: 16px;
+    min-height: 300px;
     .article-tag-title {
       font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 10px;
+      font-weight: 700;
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #e4e6eb;
     }
     .article-ul {
       display: flex;
       flex-wrap: wrap;
-      > li {
-        padding: 10px;
+      .tag-li {
+        color: #531dab;
+        background: #f9f0ff;
+        border: 1px solid #d3adf7;
+        border-radius: 4px;
+        line-height: 22px;
+        padding: 0 8px;
+        margin-right: 10px;
+        cursor: pointer;
+        &:hover {
+          color: #d48806;
+          background: #fffbe6;
+          border: 1px solid #ffe58f;
+        }
       }
     }
   }
