@@ -1,6 +1,6 @@
 $spacing: 16px;
 
-.home-canvas{
+.home-canvas {
   width: 100%;
   height: 600px;
   background-color: #fff;
@@ -113,5 +113,14 @@ $spacing: 16px;
     cursor: pointer;
     transform: scale(1.1);
     transition: all 0.3s ease-out 0s;
+  }
+}
+
+@media screen and (max-width: 1028px) {
+  .home-header {
+    height: auto;
+  }
+  .home-article-list {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

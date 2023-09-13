@@ -124,3 +124,29 @@
   left: 0;
   right: 0;
 }
+
+.mobile-header {
+  display: none;
+}
+
+@media screen and (max-width: 1028px) {
+  .layout-header {
+    display: none;
+  }
+  .mobile-header {
+    position: relative;
+    display: flex;
+    padding: 10px 24px;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    box-shadow: #d0d7de 0 -1px inset;
+    .mobile-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      color: #d3b17d;;
+    }
+  }
+}
