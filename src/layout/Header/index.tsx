@@ -73,7 +73,7 @@ const LayoutHeader: React.FC = () => {
       </Header>
       <div className="mobile-header">
         <div className="mobile-logo">
-          <img src="/maple.svg" style={{ width: "30px", marginRight: "0.5rem" }} />
+          <img src="/maple.svg" style={{ width: "40px", marginRight: "0.5rem" }} />
           枫叶之家
         </div>
         <MenuIcon onClick={() => setDrawOpen(true)} />

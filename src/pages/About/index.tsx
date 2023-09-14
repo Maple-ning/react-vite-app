@@ -25,7 +25,7 @@ const items: TabsProps['items'] = [
 ];
 
 const About: React.FC = () => {
-  return <div className="about-view root">
+  return <div className="root">
     <div className="about-card card-shadow">
       <div className="profile-wrapper">
         <div className="profile-box">
