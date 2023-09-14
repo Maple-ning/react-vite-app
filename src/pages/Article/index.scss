@@ -135,7 +135,7 @@
     word-break: break-all;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     line-height: 1.2em;
     max-height: 2.4em;
     font-size: 14px;
@@ -151,6 +151,18 @@
     }
     .image-wrapper {
       width: 130px;
+      display: flex;
+      align-items: center;
+    }
+    .article-wrapper {
+      justify-content: center;
+    }
+    .article-title {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    .article-publish-time {
+      margin-bottom: 4px;
     }
   }
 }

@@ -53,3 +53,12 @@
 .catalog-bar {
   cursor: pointer;
 }
+
+@media screen and (max-width: 1028px) {
+  .article-content {
+    width: 100%;
+  }
+  .article-catalogue {
+    display: none;
+  }
+}

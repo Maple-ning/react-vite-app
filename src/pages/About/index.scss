@@ -8,7 +8,6 @@
   padding: 16px;
   display: flex;
   background: #fff;
-  justify-content: space-between;
 }
 
 .profile-wrapper {
@@ -64,4 +63,15 @@
 .detail-wrapper {
   flex: 1;
   padding: 16px;
+}
+
+
+@media screen and (max-width: 1028px) {
+  .about-card {
+    flex-direction: column;
+    .profile-wrapper {
+      width: 100%;
+      border-right: 0;
+    }
+  }
 }
